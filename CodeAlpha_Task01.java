@@ -21,8 +21,16 @@ class Stu_Gr_Calc //Class to do all the calculations
 	{
 		for (int i=0; i<no_of_subs; i++)
 		{
-			System.out.print("Enter Marks For The #" +(i+1) +" Subject: ");
-			 marks[i] = inp.nextInt(); 
+			while (true) {
+				System.out.print("Enter Marks For The #" +(i+1) +" Subject: ");
+				int input = inp.nextInt();
+				if (input <= 100) {
+					marks[i] = input;
+					break;
+				} else {
+					System.out.println("Error: Marks can't exceed 100. Please re-enter.");
+				}
+			}
 		}
 	}
 	
